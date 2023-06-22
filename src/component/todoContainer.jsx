@@ -20,7 +20,7 @@ function TodoContainer({listIsDone}) {
           .map((item) => {
             return (
               <StTodoList key={item.id}>
-                <Link to={`/${item.id}&${item.title}&${item.content}`} style={{ textDecoration: "none" }}>상세보기</Link>
+                <Link to={`/${item.id}`} style={{ textDecoration: "none" }}>상세보기</Link>
                 <h2>{item.title}</h2>
                 <p>{item.content}</p>
               <StBtnCtn>

@@ -2,15 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-useSelector
-
 
 const Detail = () => {
   const params = useParams();
   console.log("params : ", params);
-  const [detailData] = useSelector((state) => state.todo.todo.filter((item) => item.id === params.id))
-  console.log("detailData : ", detailData)
+  const paramsData = params.id.split("&");
+  console.log("paramsData : ", paramsData);
   return (
     <>
       <StDetailPageBox>
@@ -18,13 +15,13 @@ const Detail = () => {
           display: "block"
         }}>
         <StDetailPageBoxTop>
-          <div>ID:{detailData.id}</div>
+          <div>ID:{paramsData[0]}</div>
           <StDetailPageBoxTopBtn>
             <Link to={"/"} style={{ textDecoration: "none" }}>이전으로</Link>
           </StDetailPageBoxTopBtn>
         </StDetailPageBoxTop>
-        <h1>{detailData.title}</h1>
-        <p>{detailData.content}</p>
+        <h1>{paramsData[1]}</h1>
+        <p>{paramsData[2]}</p>
         </div>
       </StDetailPageBox>
     </>
