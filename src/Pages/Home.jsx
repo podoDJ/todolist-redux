@@ -7,9 +7,11 @@ const Home = () => {
   return (
     <StDashBoardCtn>
       <nav>
+        {/* Todo입력 */}
         <TodoInput />
       </nav>
       <main>
+        {/* TodoList 페인팅 listIsDone: 진행중/완료 분기용도 */}
         <TodoContainer listIsDone={false} />
         <TodoContainer listIsDone={true} />
       </main>

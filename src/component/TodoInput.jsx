@@ -13,6 +13,7 @@ export const TodoInput = () => {
     setTitle("");
     setContent("");
   };
+  //Todo.js로 인풋 넘기는 용도의 dispatch
   const dispatch = useDispatch();
 
   const onSubmitHandler = (event) => {
