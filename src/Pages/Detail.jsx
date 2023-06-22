@@ -3,28 +3,31 @@ import { useParams } from "react-router-dom";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-useSelector
-
+useSelector;
 
 const Detail = () => {
   const params = useParams();
   console.log("params : ", params);
-  const [detailData] = useSelector((state) => state.todo.todo.filter((item) => item.id === params.id))
-  console.log("detailData : ", detailData)
+  const [detailData] = useSelector((state) => state.todo.todo.filter((item) => item.id === params.id));
+  console.log("detailData : ", detailData);
   return (
     <>
       <StDetailPageBox>
-        <div style={{
-          display: "block"
-        }}>
-        <StDetailPageBoxTop>
-          <div>ID:{detailData.id}</div>
-          <StDetailPageBoxTopBtn>
-            <Link to={"/"} style={{ textDecoration: "none" }}>이전으로</Link>
-          </StDetailPageBoxTopBtn>
-        </StDetailPageBoxTop>
-        <h1>{detailData.title}</h1>
-        <p>{detailData.content}</p>
+        <div
+          style={{
+            display: "block",
+          }}
+        >
+          <StDetailPageBoxTop>
+            <div>ID:{detailData.id}</div>
+            <StDetailPageBoxTopBtn>
+              <Link to={"/"} style={{ textDecoration: "none" }}>
+                이전으로
+              </Link>
+            </StDetailPageBoxTopBtn>
+          </StDetailPageBoxTop>
+          <h1>{detailData.title}</h1>
+          <p>{detailData.content}</p>
         </div>
       </StDetailPageBox>
     </>

@@ -10,9 +10,9 @@ export const TodoInput = () => {
   const [content, setContent] = useState("");
 
   const onReset = () => {
-    setTitle("")
-    setContent("")
-  }
+    setTitle("");
+    setContent("");
+  };
   const dispatch = useDispatch();
 
   const onSubmitHandler = (event) => {
@@ -26,34 +26,34 @@ export const TodoInput = () => {
         isDone: false,
       })
     );
-    onReset()
+    onReset();
   };
 
   return (
     <StInputForm>
-    <form onSubmit={onSubmitHandler}>
-      제목
-      <StInput
-        type="text"
-        value={title}
-        onChange={(event) => {
-          {
-            setTitle(event.target.value);
-          }
-        }}
-      />
-      내용
-      <StInput
-        type="text"
-        value={content}
-        onChange={(event) => {
-          {
-            setContent(event.target.value);
-          }
-        }}
-      />
-      <StButton>제출하기</StButton>
-    </form>
+      <form onSubmit={onSubmitHandler}>
+        제목
+        <StInput
+          type="text"
+          value={title}
+          onChange={(event) => {
+            {
+              setTitle(event.target.value);
+            }
+          }}
+        />
+        내용
+        <StInput
+          type="text"
+          value={content}
+          onChange={(event) => {
+            {
+              setContent(event.target.value);
+            }
+          }}
+        />
+        <StButton>제출하기</StButton>
+      </form>
     </StInputForm>
   );
 };
@@ -67,7 +67,7 @@ const StInputForm = styled.div`
   border: 2px solid lightgreen;
   background-color: lightgreen;
   border-radius: 50px;
-`
+`;
 const StInput = styled.input`
   border: 1px solid white;
   margin: 20px;
@@ -77,7 +77,7 @@ const StInput = styled.input`
   outline: none;
   padding: 0 15px;
   font-size: 20px;
-`
+`;
 const StButton = styled.button`
   border: none;
   background-color: white;
@@ -85,4 +85,4 @@ const StButton = styled.button`
   height: 50px;
   width: 120px;
   border-radius: 20px;
-`
+`;
